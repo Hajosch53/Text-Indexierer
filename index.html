@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Indexierer - espero</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-4xl mx-auto p-6">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">Text Indexierer</h1>
+            <div class="prose max-w-3xl mx-auto text-gray-600">
+                <p>Der Text Indexierer von espero erstellt aus einem Textdokument einen Index der inhaltlich relevanten Wörter mit Angabe ihrer Häufigkeit, wenn sie mindestens dreimal im Text vorkommen. Nicht relevante Wörter (wie die Artikel „der, die, das" oder Konjunktionen wie „und, oder, aber") werden über eine separate Stopwort-Liste herausgefiltert. Die Stopwort-Liste kannst Du mit eigenen Einträgen erweitern. Lade nun die Text-Quelldatei für die Indexierung hoch und klicke auf den grünen Button "Index generieren", um den Index zu erstellen. Der Index wird Dir auf dem Bildschirm angezeigt und Du kannst ihn anschließend als Textdatei auf Deinen Computer herunterladen.</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+                <form id="uploadForm" class="space-y-6">
+                    <div>
+                        <label for="textFile" class="block text-sm font-medium text-gray-700 mb-2">
+                            Textdatei auswählen
+                        </label>
+                        <input type="file" 
+                               id="textFile" 
+                               name="textFile" 
+                               accept=".txt"
+                               required
+                               class="block w-full text-sm text-gray-500
+                                      file:mr-4 file:py-2 file:px-4
+                                      file:rounded-md file:border-0
+                                      file:text-sm file:font-semibold
+                                      file:bg-blue-50 file:text-blue-700
+                                      hover:file:bg-blue-100
+                                      transition duration-150 ease-in-out">
+                    </div>
+                    <button type="submit" 
+                            class="w-full bg-emerald-600 text-white px-4 py-2 rounded-md
+                                   hover:bg-emerald-700 focus:outline-none focus:ring-2 
+                                   focus:ring-emerald-500 focus:ring-offset-2
+                                   transition duration-150 ease-in-out">
+                        Index generieren
+                    </button>
+                </form>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="flex justify-center items-center space-x-2">
+                    <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600"></div>
+                    <span class="text-gray-600">Verarbeite Text...</span>
+                </div>
+            </div>
+
+            <div id="result" class="hidden space-y-4">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Generierter Index:</h2>
+                    <pre id="indexContent" class="bg-gray-50 p-4 rounded-md text-sm text-gray-700 overflow-x-auto"></pre>
+                    <button id="downloadBtn" 
+                            class="mt-4 inline-flex items-center px-4 py-2 border border-transparent 
+                                   text-sm font-medium rounded-md text-white bg-blue-600 
+                                   hover:bg-blue-700 focus:outline-none focus:ring-2 
+                                   focus:ring-offset-2 focus:ring-blue-500
+                                   transition duration-150 ease-in-out">
+                        <svg class="mr-2 -ml-1 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        Index herunterladen
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mt-12 prose max-w-3xl mx-auto text-gray-600 text-sm">
+            <p>Dieses Programm ist freie Software, die vom Libertad Verlag, Potsdam/Germany, 2024 zur Indexierung unserer Zeitschrift „espero" (www.edition-espero.de) entwickelt wurde. Sie können das Programm unter den Bedingungen der GNU General Public License, Version 3 (oder später), weitergeben und/oder modifizieren. Es wird ohne Gewährleistung bereitgestellt.</p>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

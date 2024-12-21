@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Indexierer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Indexierer</h1>
+        
+        <div class="upload-section">
+            <form id="uploadForm">
+                <div class="file-input">
+                    <label for="textFile">Textdatei auswählen:</label>
+                    <input type="file" id="textFile" name="textFile" accept=".txt" required>
+                </div>
+                <button type="submit">Index generieren</button>
+            </form>
+        </div>
+
+        <div id="result" class="result-section" style="display: none;">
+            <h2>Generierter Index:</h2>
+            <pre id="indexContent"></pre>
+            <button id="downloadBtn" class="download-btn">Index herunterladen</button>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            Verarbeite Text...
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

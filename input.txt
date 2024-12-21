@@ -1,0 +1,10 @@
+Dies ist ein Beispieltext für unseren Textindexierer.
+Der Text enthält einige Wörter, die mehrmals vorkommen werden.
+Textindexierer ist ein Programm, das Wörter zählt.
+Ein Textindexierer analysiert den Text und erstellt einen Index.
+Der Index zeigt, wie oft Wörter im Text vorkommen.
+Dieser Text verwendet absichtlich bestimmte Wörter mehrmals.
+Text, Index und Wörter sind wichtige Begriffe in diesem Beispiel.
+Der Textindexierer ignoriert Stoppwörter aus der Liste.
+Text Text Text Wörter Wörter Index Index Beispiel Beispiel
+Textindexierer Textindexierer Programme Programme.

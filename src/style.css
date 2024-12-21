@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.prose {
+    max-width: 65ch;
+    line-height: 1.6;
+}
+
+.prose a {
+    color: #059669;
+    text-decoration: underline;
+}
+
+.prose a:hover {
+    color: #047857;
+}
